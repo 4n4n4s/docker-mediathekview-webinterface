@@ -43,7 +43,7 @@ LABEL \
       org.label-schema.name="mediathekview" \
       org.label-schema.description="Docker container for Mediathekview" \
       org.label-schema.version=$MEDIATHEK_VERSION \
-      org.label-schema.vcs-url="https://github.com/conrad784/docker-mediathekview-webinterface" \
+      org.label-schema.vcs-url="https://github.com/4n4n4s/docker-mediathekview-webinterface" \
       org.label-schema.schema-version="1.0"
 
 # Define software download URLs.
