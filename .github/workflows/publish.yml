@@ -10,6 +10,7 @@ on:
     - '*'
     branches:
     - main
+    - latest
 
 jobs:
   push_to_registry:
