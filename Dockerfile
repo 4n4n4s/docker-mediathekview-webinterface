@@ -9,7 +9,7 @@ ENV MEDIATHEK_VERSION=15.0.0
 RUN apt-get update
 
 # Locale needed for storing files with umlaut
-RUN apt-get install -y apt-utils locales \
+RUN apt-get install -y --no-upgrade apt-utils locales \
     && echo en_US.UTF-8 UTF-8 > /etc/locale.gen \
     && locale-gen
 
@@ -18,12 +18,13 @@ ENV LANGUAGE=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 
 # Runtime deps
-RUN apt-get install -y \
-        wget \
-	procps \
-        vlc \
-        flvstreamer \
-        ffmpeg \
+# Runtime deps
+RUN apt-get install -y --no-upgrade \
+    wget \
+    procps \
+    vlc \
+    flvstreamer \
+    ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
 # Maximize only the main/initial window.
