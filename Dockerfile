@@ -1,5 +1,5 @@
 # Pull base image.
-FROM jlesage/baseimage-gui:debian-12-v4
+FROM jlesage/baseimage-gui:debian-13-v4
 
 ENV USER_ID=0 GROUP_ID=0 TERM=xterm
 
@@ -14,9 +14,9 @@ RUN apt-get install -y apt-utils locales \
     && echo en_US.UTF-8 UTF-8 > /etc/locale.gen \
     && locale-gen
 
-ENV LC_ALL en_US.UTF-8
-ENV LANGUAGE en_US.UTF-8
-ENV LANG en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
+ENV LANGUAGE=en_US.UTF-8
+ENV LANG=en_US.UTF-8
 
 # Runtime deps
 RUN apt-get install -y \
