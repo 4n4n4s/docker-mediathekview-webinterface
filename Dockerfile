@@ -9,15 +9,14 @@ ENV MEDIATHEK_VERSION=15.0.0
 RUN apt-get update
 
 # Locale needed for storing files with umlaut
-RUN apt-get install -y --no-upgrade apt-utils locales \
-    && echo en_US.UTF-8 UTF-8 > /etc/locale.gen \
+RUN apt-get install -y --no-install-recommends locales \
+    && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
     && locale-gen
 
 ENV LC_ALL=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 
-# Runtime deps
 # Runtime deps
 RUN apt-get install -y --no-upgrade \
     wget \
